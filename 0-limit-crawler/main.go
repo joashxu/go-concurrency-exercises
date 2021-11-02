@@ -20,10 +20,7 @@ import (
 func Crawl(ticker <-chan time.Time, url string, depth int, wg *sync.WaitGroup) {
 	defer wg.Done()
 
-	prev := time.Now()
-	fmt.Println("Waiting  ", prev)
 	<-ticker
-	fmt.Println("Done!  ", time.Now().Sub(prev))
 
 	if depth <= 0 {
 		return
