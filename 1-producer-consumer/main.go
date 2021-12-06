@@ -39,7 +39,7 @@ func main() {
 	start := time.Now()
 	stream := GetMockStream()
 
-	link := make(chan *Tweet)
+	link := make(chan *Tweet, 10)
 	done := make(chan bool)
 
 	// Producer
